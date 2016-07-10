@@ -30,7 +30,7 @@ sub patch_data {
     return {
         v => 3,
         config => {
-            -modules => {
+            -module => {
                 summary => 'A string containing semicolon-separated list '.
                     'of module names to hide',
                 schema => 'str*',
@@ -40,7 +40,7 @@ sub patch_data {
             {
                 action => 'wrap',
                 sub_name => 'module_path',
-                code => $w_which,
+                code => $w_module_path,
             },
         ],
     };
@@ -51,7 +51,7 @@ sub patch_data {
 
 =head1 SYNOPSIS
 
- % PERL5OPT=-MModule::Path::More::Patch::Hide=-modules,'Foo::Bar;Baz' app.pl
+ % PERL5OPT=-MModule::Path::More::Patch::Hide=-module,'Foo::Bar;Baz' app.pl
 
 In the above example C<app.pl> will think that C<Foo::Bar> and C<Baz> are not
 installed even though they might actually be installed.

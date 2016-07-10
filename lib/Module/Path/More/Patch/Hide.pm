@@ -69,6 +69,8 @@ asks the modules that happen to be hidden.
 
 =head1 append:SEE ALSO
 
+L<Module::Path::Patch::Hide>.
+
 If the application checks he availability of modules by actually trying to
 C<require()> them, you can try: L<lib::filter>, L<lib::disallow>.
 
